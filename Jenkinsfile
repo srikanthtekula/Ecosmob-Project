@@ -17,6 +17,7 @@ withCredentials([usernamePassword(credentialsId: 'docker-login-credentials', pas
    sh "docker login -u $uname -p $pword"
    echo docker login successful $name :::::: $pword "
 }
+}
  
  stage('Push the image to docker hub registry'){
       sh 'docker push srikanthtekula/nginx_image:v1'
