@@ -12,10 +12,13 @@ stage('tag Image'){
       sh 'docker tag nginx_image:v1 srikanthtekula/nginx_image:v1'
 	  echo "docker tag successful "
   }
+  
+  
+  
 stage('login to the dockerhub'){
-withCredentials([usernamePassword(credentialsId: 'docker-login-credentials', passwordVariable: 'pword', usernameVariable: 'uname')]) {
+withCredentials([usernamePassword(credentialsId: 'docker-password-credentials', passwordVariable: 'pword', usernameVariable: 'uname')]) {
    sh "docker login -u srikanthtekula -p $pword"
-   echo "docker login successful $name :::::: $pword "
+   echo "docker login successful  $uname :::::: $pword "
 }
 }
  
