@@ -15,7 +15,7 @@ stage('tag Image'){
 stage('login to the dockerhub'){
 withCredentials([usernamePassword(credentialsId: 'docker-login-credentials', passwordVariable: 'pword', usernameVariable: 'uname')]) {
    sh "docker login -u $uname -p $pword"
-   echo docker login successful $name :::::: $pword "
+   echo "docker login successful $name :::::: $pword "
 }
 }
  
