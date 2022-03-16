@@ -6,12 +6,12 @@ node("Centos"){
       sh 'docker build -t myimagev1 .'
   }
 
-  stage('Build Image'){
+ /* stage('Build Image'){
       sh 'docker image tag myimagev1 52.66.190.203:5000/myimagev1'
   }
   stage('Upload the image to dockerhub'){
       sh 'docker push 52.66.190.203:5000/myimagev1 '
-  }  
+  }  */  
   stage('Run image'){
       sh 'docker-compose up -d'
   }
@@ -25,3 +25,5 @@ node("Centos"){
       sh 'curl 52.66.190.203:8085'
   }
 }
+
+
