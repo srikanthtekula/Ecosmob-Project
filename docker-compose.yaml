@@ -5,3 +5,4 @@ services:
     container_name: mynginxServer
     ports:
       -  8085:80
+
