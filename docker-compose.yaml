@@ -1,0 +1,7 @@
+version: '3.6'
+services:
+  nginxsserver:
+    image: 52.66.190.203:5000/myimagev1
+    container_name: mynginxServer
+    ports:
+      -  8085:80
