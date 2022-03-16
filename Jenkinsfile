@@ -1,4 +1,4 @@
-node("Centos"){
+node{
   stage('Checkout') {
       checkout scm
   }
@@ -10,7 +10,7 @@ node("Centos"){
       sh 'docker image tag myimagev1 52.66.190.203:5000/myimagev1'
   }
   stage('Upload the image to dockerhub'){
-      sh 'docker push 52.66.190.203:5000/myimagev1 '
+      sh 'docker push 52.66.190.203:5000/myimagev1 ' 
   }  */  
   stage('Run image'){
       sh 'docker-compose up -d'
