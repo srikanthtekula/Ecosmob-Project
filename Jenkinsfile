@@ -48,7 +48,7 @@ withCredentials([usernamePassword(credentialsId: 'docker-password-credentials', 
 	  echo " ls -al lists out all the files that got checkout during scm checkout "
   }
   stage('check the nginx url'){
-      sh 'curl 52.66.190.203:8085'
+      sh 'curl 3.109.60.58:8085'
 	  echo " checking the url status "
   }
 }
