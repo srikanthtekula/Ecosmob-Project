@@ -23,9 +23,9 @@ node{
 	  }
 
 stage('login to the dockerhub'){
-withCredentials([usernamePassword(credentialsId: 'docker-login-credentials', passwordVariable: 'docker_pword', usernameVariable: 'docker_uname')]) {
-    sh "docker login -u srikanthtekula -p $docker_pword"
-   echo "docker login successful Username ::::::  $docker_uname Password    :::::: $docker_pword "
+withCredentials([usernamePassword(credentialsId: 'docker-password-credentials', passwordVariable: 'pword', usernameVariable: 'uname')]) {
+   sh "docker login -u srikanthtekula -p $pword"
+   echo "docker login successful  $uname :::::: $pword "
 }
 }
 
@@ -33,6 +33,8 @@ withCredentials([usernamePassword(credentialsId: 'docker-login-credentials', pas
       sh 'docker push 3.110.119.24:5000/nginx_image:v2'
 	  echo " push to the docker registry successful "
   }  
+  
+  
   stage('Run image'){
       sh 'docker-compose up -d'
 	  echo " docker compose run successful "
@@ -50,3 +52,4 @@ withCredentials([usernamePassword(credentialsId: 'docker-login-credentials', pas
 	  echo " checking the url status "
   }
 }
+
