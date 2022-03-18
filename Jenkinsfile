@@ -13,14 +13,14 @@ node{
       sh 'docker tag nginx_image:v2 srikanthtekula/nginx_image:v2'
 	  echo "docker tag successful "
   } */
-  
+  /*  we can use this later
  stage('Tag Image'){
 	      sh 'docker tag nginx_image:v2 3.110.119.24:5000/nginx_image:v2'
 	  }
 	  
  stage('Push the image to locally created registry'){
 	      sh 'docker push 3.110.119.24:5000/nginx_image:v2'
-	  }
+	  }  */
 /*
 stage('login to the dockerhub'){
 withCredentials([usernamePassword(credentialsId: 'docker-password-credentials', passwordVariable: 'pword', usernameVariable: 'uname')]) {
