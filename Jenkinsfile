@@ -1,4 +1,4 @@
-node{
+node("test"){
   stage('Checkout') {
       checkout scm
 	  echo " scm check out successful "
